@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UITableViewController {
     
     var friends = [Friend]()
+    var selectedFrined: Int? 
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,12 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let friend = friends[indexPath.row]
         cell.textLabel?.text = friend.name
-        cell.detailTextLabel?.text = friend.timeZone.identifier
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = friend.timeZone
+        dateFormatter.timeStyle = .short
+        
+        cell.detailTextLabel?.text = dateFormatter.string(from: Date())
         
         return cell
     }
@@ -79,9 +85,19 @@ class ViewController: UITableViewController {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "FriendViewController") as? FriendViewController else {
             fatalError("Unable to create FriendViewController. ")
         }
+        selectedFrined = position
         vc.delegate = self
         vc.friend = friend
-        navigationController?.pushViewController(vc, animated: true)    }
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func update(friend: Friend){
+        guard let selectedFriend = selectedFrined else { return }
+        
+        friends[selectedFriend] = friend
+        tableView.reloadData()
+        saveData()
+    }
 
 }
 

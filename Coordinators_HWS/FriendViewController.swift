@@ -51,8 +51,13 @@ class FriendViewController: UITableViewController {
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated )
+        delegate?.update(friend: friend)
+    }
+    
     @IBAction func nameChanged(_ sender: UITextField) {
-        
+        friend.name = sender.text ?? ""
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -91,7 +96,7 @@ class FriendViewController: UITableViewController {
             
             let timeZone = timeZones[indexPath.row]
             
-            cell.textLabel?.text = timeZone.identifier
+            cell.textLabel?.text = timeZone.identifier.replacingOccurrences(of: "_", with: " ")
                 let timeDiff = timeZone.secondsFromGMT(for: Date())
             cell.detailTextLabel?.text = String(timeDiff.timeString())
             
