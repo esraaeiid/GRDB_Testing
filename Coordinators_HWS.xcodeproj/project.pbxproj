@@ -19,6 +19,9 @@
 		1053A11725D6D1F4009F6365 /* Coordinators_HWSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1053A11625D6D1F4009F6365 /* Coordinators_HWSUITests.swift */; };
 		1053A12825D6DE0A009F6365 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1053A12725D6DE0A009F6365 /* Friend.swift */; };
 		1053A12D25D6EF9F009F6365 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1053A12C25D6EF9F009F6365 /* FriendViewController.swift */; };
+		10FD8CE825D84A8A0054A2A1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD8CE725D84A8A0054A2A1 /* Coordinator.swift */; };
+		10FD8CED25D852E80054A2A1 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD8CEC25D852E80054A2A1 /* MainCoordinator.swift */; };
+		10FD8CF225D854320054A2A1 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FD8CF125D854320054A2A1 /* Storyboarded.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		1053A11825D6D1F4009F6365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1053A12725D6DE0A009F6365 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		1053A12C25D6EF9F009F6365 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
+		10FD8CE725D84A8A0054A2A1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		10FD8CEC25D852E80054A2A1 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		10FD8CF125D854320054A2A1 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,9 @@
 				1053A0F425D6D1EF009F6365 /* AppDelegate.swift */,
 				1053A0F625D6D1EF009F6365 /* SceneDelegate.swift */,
 				1053A0F825D6D1EF009F6365 /* ViewController.swift */,
+				10FD8CE725D84A8A0054A2A1 /* Coordinator.swift */,
+				10FD8CEC25D852E80054A2A1 /* MainCoordinator.swift */,
+				10FD8CF125D854320054A2A1 /* Storyboarded.swift */,
 				1053A12C25D6EF9F009F6365 /* FriendViewController.swift */,
 				1047A15125D74AE700ABDE85 /* TimeFormatting.swift */,
 				1047A14925D725EA00ABDE85 /* TextTableViewCell.swift */,
@@ -270,12 +279,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10FD8CE825D84A8A0054A2A1 /* Coordinator.swift in Sources */,
 				1047A14A25D725EA00ABDE85 /* TextTableViewCell.swift in Sources */,
 				1047A15225D74AE700ABDE85 /* TimeFormatting.swift in Sources */,
 				1053A0F925D6D1EF009F6365 /* ViewController.swift in Sources */,
 				1053A0F525D6D1EF009F6365 /* AppDelegate.swift in Sources */,
 				1053A0F725D6D1EF009F6365 /* SceneDelegate.swift in Sources */,
 				1053A12825D6DE0A009F6365 /* Friend.swift in Sources */,
+				10FD8CF225D854320054A2A1 /* Storyboarded.swift in Sources */,
+				10FD8CED25D852E80054A2A1 /* MainCoordinator.swift in Sources */,
 				1053A12D25D6EF9F009F6365 /* FriendViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,9 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class ViewController: UITableViewController, Storyboarded{
+    
+    weak var coordinator: MainCoordinator?
     
     var friends = [Friend]()
     var selectedFrined: Int? 
@@ -42,7 +44,9 @@ class ViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        configureFriend(friend: friends[indexPath.row], position: indexPath.row)
+        selectedFrined = indexPath.row
+        
+        coordinator?.configureFriend(friend: friends[indexPath.row])
     }
     
     func loadData(){
@@ -77,20 +81,11 @@ class ViewController: UITableViewController {
         friends.append(friend)
         tableView.insertRows(at: [IndexPath(row: friends.count - 1, section: 0)], with: .automatic)
         saveData()
-        
-        configureFriend(friend: friend, position: friends.count - 1)
+        selectedFrined = friends.count - 1
+        coordinator?.configureFriend(friend: friend)
     }
     
-    func configureFriend(friend: Friend, position: Int){
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: "FriendViewController") as? FriendViewController else {
-            fatalError("Unable to create FriendViewController. ")
-        }
-        selectedFrined = position
-        vc.delegate = self
-        vc.friend = friend
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
+
     func update(friend: Friend){
         guard let selectedFriend = selectedFrined else { return }
         
