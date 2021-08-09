@@ -16,7 +16,7 @@ class ViewController: UITableViewController, Storyboarded{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      loadData()
+        loadData()
         
         title = "Friend Zone"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addFriend))
